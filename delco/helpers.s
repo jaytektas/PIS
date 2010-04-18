@@ -189,7 +189,7 @@ mult_u32:
 ; ~300 tics only!
 
 s2_range = 0
-mult_u32 = 2
+multu32 = 2
 neg_flag_u8 = 6
 index_u16 = 7
 ret_16 = 9
@@ -271,30 +271,30 @@ s2_pos:
 	ldaa    s2_range+1, y
 	ldab    index_u16+1, y
 	mul
-	std		mult_u32+2, y
+	std		multu32+2, y
 
 	ldaa    s2_range+1, y
 	ldab    index_u16, y
 	mul
-	addd    mult_u32+1, y
-	std     mult_u32+1, y
+	addd    multu32+1, y
+	std     multu32+1, y
 
 	ldaa    s2_range, y
 	ldab    index_u16+1, y
 	mul
-	addd    mult_u32+1, y
-	std     mult_u32+1, y
+	addd    multu32+1, y
+	std     multu32+1, y
 
-	rol     mult_u32, y
+	rol     multu32, y
 	ldaa    s2_range, y
 	ldab    index_u16, y
 	mul
-	addd    mult_u32, y
-	std     mult_u32, y
+	addd    multu32, y
+	std     multu32, y
 
 	brclr	neg_flag_u8, y #2 s2_pos_2
 	ldd		s2a_u16, y
-	subd	mult_u32, y
+	subd	multu32, y
 	bra		exit
 
 s2_pos_2:
