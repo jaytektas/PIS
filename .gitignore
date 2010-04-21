@@ -1,3 +1,5 @@
-delco/*.o
-delco/delco.elf
+*.o
+delco.elf
+.*
+*~
 
