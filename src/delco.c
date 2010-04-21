@@ -38,7 +38,6 @@ USHORT APW, AIAR;
 
 	SCCR2 = 0x27; 						// sci ready to recieve
 	FMDCR = 0xfb12;
-	PPORTbits.SXR_ENABLE = TRUE;				// sxr tx enable
 
 	INTR_ON();
 

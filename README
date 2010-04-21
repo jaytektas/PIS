@@ -1,6 +1,51 @@
-Jason Roughley's PIS firmware
+PIS firmware is a replacement firmware for the GM #1227808 and compatible P4 variants. This software was designed and created by Jason Roughley pis.controller@gmail.com and is licensed under the GNU GPL3. Thanks for taking a look and I hope you enjoy.
 
-This is a 100% custom fuel injection & ignition control firmware for the GM P4 (1227808/165/etc) based ECU's
+Regards
+Jay
 
-Thank you for using this software!
+COMPILING
+PIS requires the GCC cross compiling tool chain for Motorola 68HC11 based cpu. The src/Makefile contains default paths for the toolset on my system and you may need to override their paths to match your system. This can be done easily on the command line. First enter the source directory before executing the make command. i.e.
+
+cd src/
+make GCC=/usr/bin/m68hc11-gcc LD=/usr/bin/m68hc11-ld AS=/usr/bin/m68hc11-as OBJCOPY=/usr/bin/m68hc11-objcopy
+
+The usable image will be in Motorola s19 SREC format and is called "delco.s19"
+
+BACKGROUND
+PIS firmware is designed to make the 1227808 ecu perform as a more generic unit and is intended for alternative EMS projects NOT a direct replacement for your road car. The main fuelling algorithm is simple.
+
+MAP only
+A base pulse width is chosen from a 16 x 16 table with editable RPM and MAP load points.
+Corrections to the base fuel pulse are then calculated and later applied:-
+
+1. Engine temperature correction
+2. Engine manifold air temperature correction
+3. Wideband EGO correction
+
+Pure Alpha-N or blending
+Alpha-N can be chosen to operate alone or configured to work in combination with a MAP sensor by blending the calculated fuel and ignition tables. The Alpha-N tables are by default 16 x 10, RPM vs. TPS % load points respectively. The algorithm used with this setting is to acquire two base pulse widths each from the 16 x 16 MAP table and the 16 x 10 Alpha-N, these values are then interpolated based on two chosen RPM points the lower being 100% of the Alpha-N pulse width and the upper being 100% of the MAP pulse width. This final value then has the temperature and EGO (once map mode is reached) corrections applied.
+
+Ignition timing follows this same scheme excluding EGO correction.
+
+Boost control is a somewhat crude on off solenoid switching that will oscillate around a set MAP pressure by a chosen hysteresis value. The good part is it's attached to your foot. A 16 x 10 table, RPM vs. TPS % determine at what MAP pressure the valve will open, closing again once this drops by the hysteresis.
+
+IGNTION
+Fuel and Ignition in the ECU are managed by two IC's. One being the Motorola cpu that executes the code on the memcal. The memcal code manages the decision of what fuel and ignition timing is to be commanded, whilst the second IC (not hacked) performs the actual delivery. The second IC receives the ignition pulses from the outside world and only passes information about fuel injection events it has made. Therefore at no time do we see the ignition pulses. We are given the reference period between pulses, and if the injectors have been fired since we last checked. The second IC is configured via the resnet on the memcal.
+
+The memcal can be configured AFAIK in 8,6 4 cylinder and TBI modes via the physical resnet. In each of the cylinder modes the second IC divides the engine's expected full cycle pulses in half and injects on every division thereof. Therefore Injection can be set to pulse every 4, 3, 2 or 1 in TBI. Due to the fact that we here about every one of these events we can opt to command zero fuel causing skips. I.e. an 8 cylinder resnet and skip 1 (every second pulse) would inject only once per full four stroke cycle into a V8.
+
+This relates to ignition control because the ECU has to "see" a certain number of pulses to allow correct fuelling. Herein lays the hack, in TBI mode the ecu will fire every time it hears an ignition pulse allowing us in combination with skips and an ignition system that tells lies to ecu to become rather flexible. Imagine a 36-1 wheel driving the ignition and the ignition only ever telling the ecu about two pulses, say the missing tooth, add in a skip and you'll shoot fuel once every full engine cycle. The code inside the ECU allows the real RPM to be calculated whilst the second IC is fooled :) every ignition pulse received by the second IC will cause it to put out the dwell / timing signal which the smart ignition system can capitalise upon.
+
+CLIENT SIDE
+MegaTunix cross platform tuning software is under development to match the delco :) Thanks very much to David J Andruczyk. Please refrain from contacting Dave for support but be sure to thank him for his great efforts and software. Thanks for understanding.
+
+VISIT
+http://www.github.com/Torture
+http://megatunix.sourceforge.net
+http://www.diyefi.com
+http://www.delcohacking.net
+http://www.thirdgen.org
+
+THANKS
+VL400, Antus, Dave J Andruczyk (MegaTunix), Fred Cooke, and all the people that made the original hac files and details available, ludis and all the other hackers 
 

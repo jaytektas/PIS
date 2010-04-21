@@ -16,37 +16,37 @@
 #    along with PIS firmware.  If not, see <http://www.gnu.org/licenses/>.
 
 
-# Compiler binary prefix, uncomment the second one for Debian Linux
-PREFIX = m6811-elf-
-#PREFIX = m68hc11-
-
 # Command for cleaning up, uncomment the second one for *nix
+#ifdef _WIN32_
 DELETE = del
-#DELETE = rm
+#else
+DELETE = rm
+#endif
 
-# Assign appropriate prefix to binary commands
-AS = $(PREFIX)as
-LD = $(PREFIX)ld
-GCC = $(PREFIX)gcc
-COPY = $(PREFIX)objcopy
+# Default binary commands see README
+AS = m6811-elf-as
+LD = m6811-elf-ld
+GCC = m6811-elf-gcc
+OBJCOPY = m6811-elf-objcopy
 
+INCLUDE = ../include
 
 objects = startup.o delco.o interrupt.o helpers.o vectors.o config.o
 
 delco.s19: delco.elf
-	$(COPY) -O srec delco.elf delco.s19
+	$(OBJCOPY) -O srec delco.elf delco.s19
 
 delco.elf: $(objects) delco.ld
 	$(LD) -g -T delco.ld -o delco.elf $(objects)
 
-delco.o: delco.ld delco.c delco.h registers.h types.h status.h config.o interrupt.o
-	$(GCC) -mshort -g -c -o delco.o delco.c
+delco.o: delco.ld delco.c $(INCLUDE)/delco.h $(INCLUDE)/registers.h $(INCLUDE)/types.h $(INCLUDE)/status.h config.o interrupt.o
+	$(GCC) -mshort -g -c -o delco.o delco.c -I $(INCLUDE)
 
-config.o: delco.ld types.h config.h config.c
-	$(GCC) -mshort -g -c -o config.o config.c
+config.o: delco.ld $(INCLUDE)/types.h $(INCLUDE)/config.h config.c
+	$(GCC) -mshort -g -c -o config.o config.c -I $(INCLUDE)
 
-interrupt.o: delco.ld types.h status.h config.o interrupt.c interrupt.h
-	$(GCC) -mshort -g -c -o interrupt.o interrupt.c
+interrupt.o: delco.ld $(INCLUDE)/types.h $(INCLUDE)/status.h config.o interrupt.c $(INCLUDE)/interrupt.h
+	$(GCC) -mshort -g -c -o interrupt.o interrupt.c -I $(INCLUDE)
 
 startup.o: delco.ld startup.s
 		$(AS) -o startup.o startup.s

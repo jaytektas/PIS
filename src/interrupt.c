@@ -277,10 +277,16 @@ static UBYTE state = 0;
 void transmit(void)
 {
 	SCCR2 = 0x89;
+	PPORTbits.SXR_ENABLE = TRUE;					// single wire sxr tx enable
+
 	if (length)
 	{
 		SCITX = *data++;
 		length--;
 	}
-	else SCCR2 = 0x27;
+	else
+	{
+		PPORTbits.SXR_ENABLE = FALSE;				// single wire sxr back to listen
+		SCCR2 = 0x27;
+	}
 }

@@ -61,16 +61,4 @@ void iac_update(void);
 void cts_update(void);
 void ego_update(void);
 
-/* magic macros -- don't change these */
-#undef offsetof
-#define offsetof(TYPE, MEMBER) ((size_t) &((TYPE *)0)->MEMBER)
-#define SIZEOF(TYPE, MEMBER) (sizeof(((TYPE *)0)->MEMBER))
-
-#define _DEFINE(sym, val) asm ("\n-> " #sym " %0 " #val "\n" : : "i" (val))
-#define DEFINE(s, m) \
-	_DEFINE(offsetof_##s##_##m, offsetof(s, m)); \
-	_DEFINE(sizeof_##s##_##m, SIZEOF(s, m));
-
-/* function with your structures and members */
-
 #endif
