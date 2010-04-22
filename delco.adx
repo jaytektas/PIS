@@ -1,0 +1,1711 @@
+<ADXFORMAT version="0.80" />
+<!-- Written 04/22/2010 18:19:06 -->
+<ADXHEADER>
+    <guid>486e6437-23e7-4b71-9c4e-90d955598948</guid>
+    <flags>0x10000</flags>
+    <objectcount>127</objectcount>
+    <userversion>1</userversion>
+    <author>Jay</author>
+    <desc>ADX file for all new delco firmware :)</desc>
+    <baud>8192</baud>
+    <DEFAULTS datasizeinbits="16" sigdigits="1" outputtype="1" signed="0" lsbfirst="0" float="0" />
+    <monitorcmd>statmon</monitorcmd>
+</ADXHEADER>
+
+<ADXBITMASK id="flags.inj_occu" idhash="0x9549AA91" title="flags.inj_occurred">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Set</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x04</packetoffset>
+    <operand>0x00000080</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.cranking" idhash="0x0E315431" title="flags.cranking">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Set</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x04</packetoffset>
+    <operand>0x00000040</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.running" idhash="0x884A81C5" title="flags.running">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Set</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x04</packetoffset>
+    <operand>0x00000020</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.asc" idhash="0x6EA7923F" title="flags.asc">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Set</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x04</packetoffset>
+    <operand>0x00000010</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.roc_upda" idhash="0x9D642B8D" title="flags.roc_update">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Update</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x04</packetoffset>
+    <operand>0x00000008</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.iac_upda" idhash="0x9D648D95" title="flags.iac_update">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Update</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x04</packetoffset>
+    <operand>0x00000004</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.iac_rese" idhash="0x956EA235" title="flags.iac_reset">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Reset</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x04</packetoffset>
+    <operand>0x00000002</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.cts_upda" idhash="0xDD64BBCC" title="flags.cts_update">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Update</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x04</packetoffset>
+    <operand>0x00000001</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.hard_lim" idhash="0x71A09070" title="flags.hard_limit">
+    <flags>0x00000004</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Limit</truestring>
+    <falsestring>Clear</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x05</packetoffset>
+    <operand>0x00000080</operand>
+    <bitop>AND</bitop>
+    <result>0x00000080</result>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.soft_lim" idhash="0x97A05B79" title="flags.soft_limit">
+    <flags>0x00000002</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Limit</truestring>
+    <falsestring>Clear</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x05</packetoffset>
+    <operand>0x00000040</operand>
+    <bitop>AND</bitop>
+    <result>0x00000040</result>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.boost_li" idhash="0xE7960C68" title="flags.boost_limit">
+    <flags>0x00000004</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Limit</truestring>
+    <falsestring>Clear</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x05</packetoffset>
+    <operand>0x00000020</operand>
+    <bitop>AND</bitop>
+    <result>0x00000020</result>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.ego_upda" idhash="0x9D647451" title="flags.ego_update">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Update</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x05</packetoffset>
+    <operand>0x00000010</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.closed_l" idhash="0xEACEE598" title="flags.closed_loop">
+    <flags>0x0000000C</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Closed Loop</truestring>
+    <falsestring>Open Loop</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x05</packetoffset>
+    <operand>0x00000008</operand>
+    <bitop>AND</bitop>
+    <result>0x00000008</result>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.accel" idhash="0x9E1AFA9A" title="flags.accel">
+    <flags>0x00000004</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Set</truestring>
+    <falsestring>Clear</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x05</packetoffset>
+    <operand>0x00000004</operand>
+    <bitop>AND</bitop>
+    <result>0x00000004</result>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.decel" idhash="0xE2FAFA9B" title="flags.decel">
+    <flags>0x00000004</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Set</truestring>
+    <falsestring>Clear</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x05</packetoffset>
+    <operand>0x00000002</operand>
+    <bitop>AND</bitop>
+    <result>0x00000002</result>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.fuel_cut" idhash="0xC3C903C6" title="flags.fuel_cut">
+    <flags>0x00000004</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Fuel Cut</truestring>
+    <falsestring>Clear</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x05</packetoffset>
+    <operand>0x00000001</operand>
+    <bitop>AND</bitop>
+    <result>0x00000001</result>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.idle_con" idhash="0xFBCBF861" title="flags.idle_control">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Idle Control</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x06</packetoffset>
+    <operand>0x00000080</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.refperva" idhash="0xD8E10D49" title="flags.refpervalid">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Set</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x06</packetoffset>
+    <operand>0x00000040</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.alpha_n" idhash="0x93C93D4C" title="flags.alpha_n">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Set</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x06</packetoffset>
+    <operand>0x00000020</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXBITMASK id="flags.fan_on" idhash="0xAC55407A" title="flags.fan_on">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <truestring>Clear</truestring>
+    <falsestring>Set</falsestring>
+    <ALARMONSET color="0x000000FF" />
+    <ALARMONNOTSET color="0x0000FF00" />
+    <packetoffset>0x06</packetoffset>
+    <operand>0x00000010</operand>
+    <bitop>AND</bitop>
+</ADXBITMASK>
+
+<ADXLISTVIEW id="status" idhash="0xD2A50F60" title="Status">
+    <entrycount>104</entrycount>
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="Clocks" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xD49492F4" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x3A62DDEF" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xB8AB3510" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x78AB3020" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x58AB37EE" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xF8AB320D" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xF21A031C" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x58AB3018" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xFE116A8A" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x2C29909F" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="RPM" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xCC22925A" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xDCF19A50" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xCC2035FA" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x80172139" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x06D89950" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="CTS" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xBC732FD2" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x29EC3D24" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x305D6F4C" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x95E3B6C1" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="MAT" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x46732A20" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x2B154024" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xE05D40DB" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x0233B6EE" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="ASC" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xEBED1BDB" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xEEE06C58" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x30F099D9" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x6FB3B6DD" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="TPS" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xBC64813B" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x8017AD17" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xBC20319B" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="IAC" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xAA7977B9" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x6F9D1DA3" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xD7002552" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x79E09F60" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x45B2A14C" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="IGN" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x00E5492A" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x3526AE60" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="MAP" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x0E373F20" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x06DDF258" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="EGO" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x605D5CAB" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xD4E73552" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x34D5CEB8" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x50839251" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="AE" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x1253EBB8" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x1012EEB8" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xE7E63F55" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x4F252A03" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="Misc" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xDE6AEF10" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xA0417243" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="Indexes" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x1422976E" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x14373B4E" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x1468106E" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x14373FCE" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x1464806E" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x14733CCE" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x11CF5FDD" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x118948DD" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x118BEF7D" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="ADC" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xCFE3880E" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xC5651DAE" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xC453880E" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x7637397E" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x7668125E" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x7664825E" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x5E130232" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xC1A51F4E" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x76373DFE" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x760F66FE" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xC571000E" />
+    <ADXLVENTRY entrytype="1" flags="0x00000001" title="Flags" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x9549AA91" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x0E315431" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x884A81C5" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x6EA7923F" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x9D642B8D" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x9D648D95" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x956EA235" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xDD64BBCC" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x71A09070" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x97A05B79" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xE7960C68" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x9D647451" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xEACEE598" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x9E1AFA9A" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xE2FAFA9B" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xC3C903C6" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xFBCBF861" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xD8E10D49" />
+    <ADXLVENTRY entrytype="0" itemidhash="0x93C93D4C" />
+    <ADXLVENTRY entrytype="0" itemidhash="0xAC55407A" />
+</ADXLISTVIEW>
+
+<ADXVALUE id="irq_tics" idhash="0xD49492F4" title="irq_tics">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x00</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="999.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="seconds" idhash="0x3A62DDEF" title="seconds">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x02</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="1.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="discrete" idhash="0x2C29909F" title="discrete">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x08</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="roc_clk" idhash="0xB8AB3510" title="roc_clk">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x0A</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="iac_clk" idhash="0x78AB3020" title="iac_clk">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x0C</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="ego_clk" idhash="0x58AB37EE" title="ego_clk">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x0E</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="asc_clk" idhash="0xF8AB320D" title="asc_clk">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x10</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="ae_clk" idhash="0xF21A031C" title="ae_clk">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x12</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="inj_clk" idhash="0x58AB3018" title="inj_clk">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x14</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="transient_clk" idhash="0xFE116A8A" title="transient_clk">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x16</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="rpm.rpm" idhash="0xCC22925A" title="rpm.rpm">
+    <flags>0x00000008</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x18</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="10000.000000" />
+    <alarms low="1.000000" high="6500.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="rpm.magic" idhash="0xDCF19A50" title="rpm.magic">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x1A</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="rpm.roc" idhash="0xCC2035FA" title="rpm.roc">
+    <flags>0x00000001</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x1C</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="500.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="rpm.last" idhash="0x80172139" title="rpm.last">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x1E</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="10000.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="rpm.limit" idhash="0x06D89950" title="rpm.limit">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x20</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="10000.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="cts.iar" idhash="0xBC732FD2" title="cts.iar">
+    <flags>0x00000001</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x22</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 2.8444">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="cts.kelvin" idhash="0x29EC3D24" title="cts.kelvin">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x24</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X - 273">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="cts.correction" idhash="0x305D6F4C" title="cts.correction">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x26</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="200.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <datatype>46</datatype>
+    <unittype>67</unittype>
+    <MATH equation="X / 327.68">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="cts.pw" idhash="0x95E3B6C1" title="cts.pw">
+    <flags>0x00000001</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x28</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 66">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="mat.iar" idhash="0x46732A20" title="mat.iar">
+    <flags>0x00000001</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x2A</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 2.8444">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="mat.kelvin" idhash="0x2B154024" title="mat.kelvin">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x2C</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X - 273">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="mat.correction" idhash="0xE05D40DB" title="mat.correction">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x2E</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 327.68">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="mat.pw" idhash="0x0233B6EE" title="mat.pw">
+    <flags>0x00000001</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x30</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 66">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="asc.base_corre" idhash="0xEBED1BDB" title="asc.base_correction">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x32</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 327.68">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="asc.duration" idhash="0xEEE06C58" title="asc.duration">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x34</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="asc.applied_co" idhash="0x30F099D9" title="asc.applied_correction">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x36</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 327.68">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="asc.pw" idhash="0x6FB3B6DD" title="asc.pw">
+    <flags>0x00000001</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x38</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 66">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="tps.tps" idhash="0xBC64813B" title="tps.tps">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x3A</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 10">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="tps.last" idhash="0x8017AD17" title="tps.last">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x3C</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 10">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="tps.roc" idhash="0xBC20319B" title="tps.roc">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x3E</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 10">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="iac.start" idhash="0xAA7977B9" title="iac.start">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x40</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="iac.minimum" idhash="0x6F9D1DA3" title="iac.minimum">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x42</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="iac.target" idhash="0xD7002552" title="iac.target">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x44</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="iac.position" idhash="0x79E09F60" title="iac.position">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x46</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="iac.idle_rpm" idhash="0x45B2A14C" title="iac.idle_rpm">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x48</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="ign.biar" idhash="0x00E5492A" title="ign.biar">
+    <flags>0x00000001</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x4A</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X * (90 / 256)">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="ign.dwell" idhash="0x3526AE60" title="ign.dwell">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x4C</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 66">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="map.map" idhash="0x0E373F20" title="map.map">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x4E</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="map.limit" idhash="0x06DDF258" title="map.limit">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x50</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="ego.correction" idhash="0x605D5CAB" title="ego.correction">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x52</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 327.68">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="ego.target" idhash="0xD4E73552" title="ego.target">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x54</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="ego.error" idhash="0x34D5CEB8" title="ego.error">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x56</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="ego.integral" idhash="0x50839251" title="ego.integral">
+    <flags>0x00000001</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x58</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="ego.pw" idhash="0x72B3B6F2" title="ego.pw">
+    <flags>0x00000001</flags>
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x5A</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 66">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="ae.cts_factor" idhash="0x1253EBB8" title="AE.cts_factor">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x5C</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 327.68">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="ae.roc_factor" idhash="0x1012EEB8" title="AE.roc_factor">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x5E</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 327.68">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="ae.pw" idhash="0xE7E63F55" title="AE.pw">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x60</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 66">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="AE.applied" idhash="0x4F252A03" title="AE.applied">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x62</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="X / 66">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="pw" idhash="0xDE6AEF10" title="PW">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x64</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <MATH equation="(X / 66)">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="open_delay" idhash="0xA0417243" title="open_delay">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x66</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>2</digcount>
+    <outputtype>3</outputtype>
+    <datatype>51</datatype>
+    <unittype>85</unittype>
+    <MATH equation="X / 66">
+        <VAR varID="p" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="idx.rpm" idhash="0x1422976E" title="idx.rpm">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x68</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="n" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="idx.map" idhash="0x14373B4E" title="idx.map">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x69</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="e" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="idx.cts" idhash="0x1468106E" title="idx.cts">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x6A</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="a" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="idx.mat" idhash="0x14373FCE" title="idx.mat">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x6B</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="idx.tps" idhash="0x1464806E" title="idx.tps">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x6C</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="idx.iac" idhash="0x14733CCE" title="idx.iac">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x6D</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="idx.AE_tps" idhash="0x11CF5FDD" title="idx.AE_tps">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x6E</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="idx.AE_rpm" idhash="0x118948DD" title="idx.AE_rpm">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x6F</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="idx.AE_roc" idhash="0x118BEF7D" title="idx.AE_roc">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x70</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="adc.wbo2" idhash="0xCFE3880E" title="adc.wbo2">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x71</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="adc.volt" idhash="0xC5651DAE" title="adc.volt">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x72</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="adc.nbo2" idhash="0xC453880E" title="adc.nbo2">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x73</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="adc.map" idhash="0x7637397E" title="adc.map">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x74</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="adc.cts" idhash="0x7668125E" title="adc.cts">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x75</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="adc.tps" idhash="0x7664825E" title="adc.tps">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x76</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="adc.pumpvolt" idhash="0x5E130232" title="adc.pumpvolt">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x77</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="adc.diag" idhash="0xC1A51F4E" title="adc.diag">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x78</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="adc.mat" idhash="0x76373DFE" title="adc.mat">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x79</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="adc.esc" idhash="0x760F66FE" title="adc.esc">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x7A</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="adc.vmaf" idhash="0xC571000E" title="adc.vmaf">
+    <parentcmdidhash>0x6553D472</parentcmdidhash>
+    <packetoffset>0x7B</packetoffset>
+    <range low="0.000000" high="255.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>1</digcount>
+    <outputtype>1</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXMACRO id="statmon" idhash="0x54F4A31A" title="Status Monitor" repeatcount="1">
+    <NODE commandID="readstatus" repeatcount="1" />
+    <NODE commandID="procstat" repeatcount="1" />
+</ADXMACRO>
+
+<ADXCLISTENPACKET id="procstat" idhash="0x6553D472" title="Process Status" flags="0x00000005">
+    <listentimeout>400</listentimeout>
+    <packetbodylength>124</packetbodylength>
+    <packetoffsetinbody>0</packetoffsetinbody>
+    <packetsize>124</packetsize>
+    <headerstring size="0"></headerstring>
+    <footerstring size="0"></footerstring>
+</ADXCLISTENPACKET>
+
+<ADXCSENDCOMMAND id="readstatus" idhash="0x4DFB050D" title="Read Status">
+    <bytestring size="0x5">0x73 0x00 0x00 0x00 0x7C </bytestring>
+</ADXCSENDCOMMAND>
+
+<ADXCSENDCOMMAND id="con" idhash="0xCD41191B" title="Connect">
+    <bytestring size="0x15">0x21 0x3F 0xF2 0x00 0x02 0x02 0x00 0x21 0x3F 0xFC 0x00 0x02 0xFB 0x13 0x21 0x3F 0xFC 0x00 0x02 0xFE 0x13 </bytestring>
+</ADXCSENDCOMMAND>
+
+<ADXVALUE id="3fc0" idhash="0xA8D3EC59" title="0x3FC0 - [Counter In] =RPM,B CTR CTS, Period Of Last 2 Ref Pulses ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x00</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fc2" idhash="0xA8D3F8B9" title="0x3FC2 - [Counter In] Timer #1 (Input 5 - Speed Sensor Pulse Time) ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x02</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fc4" idhash="0xA8D3E5B9" title="0x3FC4 - [Counter In] Timer #2 (Input 6 - )   ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x04</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fc6" idhash="0xA8D3F179" title="0X3FC6 - [Counter In] PA1 Cntr (Cam Pulses) Unused ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x06</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fc8" idhash="0xA8D3E679" title="0x3FC8 - [Counter In] - counts when EST line is HI - EST Monitor">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x08</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fca" idhash="0xA8D3E879" title="0x3FCA - [Counter In] Cntr #3 - Knock counter (16.5 Khz cntr if In 4 is hi) ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x0A</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fcc" idhash="0xA8D3E619" title="0X3FCC - [PWM Out] A/C Clutch ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x0C</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fce" idhash="0xA8D3FFD9" title="0x3FCE - [Timer] Start Of Injection Delay Time ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x0E</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fd0" idhash="0xA8D0C059" title="0X3FD0 - [Pulse Out] Base Pulse Width (Synchronous Delayed) ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x10</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fd2" idhash="0xA8D0D4B9" title="0x3FD2 - [PWM Out] Pin A4 Out (Flexible A) ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x12</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fd4" idhash="0xA8D0C9B9" title="0x3FD4 - [PWM Out] Fuel Use PWM output ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x14</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fd6" idhash="0xA8D0DD79" title="0x3FD6 - [PWM Out] Pin D7 Out (TCC Or Flexible D) ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x16</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fd8" idhash="0xA8D0CA79" title="0x3FD8 - [PWM Out] Pin A3 Out (Flexible B) ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x18</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fda" idhash="0xA8D0C479" title="0x3FDA - [PWM Out] Pin D12 Out (Flexible C) ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x1A</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fdc" idhash="0xA8D0CA19" title="0x3FDC - [Pulse Out] EST spark dwell period register (65Khz)">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x1C</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fde" idhash="0xA8D0D3D9" title="0x3FDE - [Timer] Next Reference ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x1E</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fe0" idhash="0xA8D0D459" title="0x3FE0 - [Counter In] PA - VSS">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x20</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fe2" idhash="0xA8D0C0B9" title="0x3FE2 - [Timer] Falling Reference - B Ctr (65.5 Khz) At Next Fire/Fall Time ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x22</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fe4" idhash="0xA8D0DDB9" title="0x3FE4 - [Timer] Rising Reference - B Cnt&apos;r Bgn nxt Dwell ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x24</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fe6" idhash="0xA8D0C979" title="0x3FE6 - [Timer] Rising Charge Time - FALCHG+ESTDWELL(LAST)-ESTDWELL(CURRENT)  ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x26</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fe8" idhash="0xA8D0DE79" title="0x3FE8 - [Timer] Falling Charge Time - ESTFALL(CURRENT)-ESTFALL(LAST),1/65/5KHZ CTS">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x28</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fea" idhash="0xA8D0D079" title="0x3FEA - [PWM Out] PWM OUTPUT, P9 - No Associated Pin ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x2A</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fec" idhash="0xA8D0DE19" title="0x3FEC - [Timer] Reference Timer - B Cnt&apos;r last ref ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x2C</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3fee" idhash="0xA8D0C7D9" title="0x3FEE - [Timer] EFI Rise TIME (BCTR) ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x2E</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3ff0" idhash="0xA8D0B859" title="0x3FF0 - [Timer] EFI FALL TIME (BCTR) ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x30</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3ff2" idhash="0xA8D0ACB9" title="0x3FF2 - [PW Out] Async Pule Width Cnt&apos;r  ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x32</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3ff4" idhash="0xA8D0B1B9" title="0x3FF4 - [Counter] Async Pulse Fall Time (BCTR) ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x34</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3ff6" idhash="0xA8D0A579" title="0x3FF6 - [Timer] Time From Ref Pulse To Fire (Neg. For Advance) ">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x36</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3ff8" idhash="0xA8D0B279" title="0x3FF8 - [Timer] PA1TIM(I2 )BCTR AT LAST I2 PULSE">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x38</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3ffa" idhash="0xA8D0BC79" title="0x3FFA- Status register">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x3A</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3ffc" idhash="0xA8D0B219" title="0x3FFC - control register">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x3C</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>
+
+<ADXVALUE id="3ffe" idhash="0xA8D0ABD9" title="0x3FFE">
+    <parentcmdidhash>0xA8C3954C</parentcmdidhash>
+    <packetoffset>0x3E</packetoffset>
+    <sizeinbits>16</sizeinbits>
+    <range low="0.000000" high="65535.000000" />
+    <alarms low="0.000000" high="255.000000" />
+    <digcount>4</digcount>
+    <outputtype>0</outputtype>
+    <MATH equation="X">
+        <VAR varID="X" type="native" />
+    </MATH>
+</ADXVALUE>

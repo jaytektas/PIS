@@ -49,7 +49,7 @@ struct _config
 	{
 		// load bins
 		USHORT hysterisis;
-		USHORT target[TPS_BINS][RPM_BINS];					// boost solenoid controller
+		USHORT target[RPM_BINS][TPS_BINS];					// boost solenoid controller
 	} boost;
 
 	// cranking
@@ -81,7 +81,7 @@ struct _config
 	} asc;
 
 	// fuel
-	USHORT BPW[MAP_BINS][RPM_BINS];							// base pulse widths before corrections
+	USHORT BPW[RPM_BINS][MAP_BINS];							// base pulse widths before corrections
 
 	// injector pintle opening delay vs battery volts
 	USHORT open_delay[9];
@@ -105,10 +105,10 @@ struct _config
 
 		// limiting
 		SHORT min_iar;										// minimum ignition +advance / -retard
-		SHORT max_iar;										// maximum ignitino +advance / -retard
+		SHORT max_iar;										// maximum ignition +advance / -retard
 
 		// base ignition +advance / -retard
-		SHORT BIAR[RPM_BINS][MAP_BINS];						// base igntion +advance / -retard degrees * 2.8444
+		SHORT BIAR[RPM_BINS][MAP_BINS];						// base ignition +advance / -retard degrees * 2.8444
 	} ign;
 
 	// sensors
@@ -178,7 +178,7 @@ struct _config
 
 		SHORT proportional;
 		SHORT integral;
-		USHORT target[MAP_BINS][RPM_BINS];					// closed loop adc targets
+		USHORT target[RPM_BINS][MAP_BINS];					// closed loop adc targets
 	} ego;
 
 	// APW * CTS * ROC -> 0 over cycles
@@ -208,15 +208,15 @@ struct _config
 		} cts;
 
 		// actual base acceleration pulse widths before corrections
-        USHORT BPW[AE_TPS_BINS][AE_RPM_BINS];				// base pulse widths
+        USHORT BPW[AE_RPM_BINS][AE_TPS_BINS];				// base pulse widths
 	} AE;
 
 	struct
 	{
 		USHORT start_map_rpm;
 		USHORT full_map_rpm;
-		USHORT BPW[TPS_BINS][RPM_BINS];
-		USHORT BIAR[TPS_BINS][RPM_BINS];
+		USHORT BPW[RPM_BINS][TPS_BINS];
+		USHORT BIAR[RPM_BINS][TPS_BINS];
 	} alpha_N;
 };
 

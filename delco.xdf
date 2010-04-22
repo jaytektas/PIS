@@ -1,0 +1,2201 @@
+<!-- Written 04/22/2010 18:53:20 -->
+<XDFFORMAT version="1.20">
+  <XDFHEADER>
+    <flags>0x1</flags>
+    <deftitle>GM_P4_ECM</deftitle>
+    <description></description>
+    <baseoffset>-61440</baseoffset>
+    <adsassoc>.\delco.adx</adsassoc>
+    <adscheck>0x0</adscheck>
+    <DEFAULTS datasizeinbits="8" sigdigits="2" outputtype="1" signed="0" lsbfirst="0" float="0" />
+    <REGION type="0xFFFFFFFF" startaddress="0x0" size="0x1000" regionflags="0x0" name="Binary File" desc="This region describes the bin file edited by this XDF" />
+    <CATEGORY index="0x0" name="Engine" />
+    <CATEGORY index="0x1" name="RPM" />
+    <CATEGORY index="0x2" name="Boost Limiting" />
+    <CATEGORY index="0x3" name="Coolant Temperature" />
+    <CATEGORY index="0x4" name="Manifold Air Temperature" />
+    <CATEGORY index="0x5" name="Base Pulse Width" />
+    <CATEGORY index="0x6" name="Ignition" />
+    <CATEGORY index="0x7" name="Intake Air Control" />
+    <CATEGORY index="0x8" name="Throttle Position Sensor" />
+    <CATEGORY index="0x9" name="Exhaust Gas Oxygen" />
+    <CATEGORY index="0xA" name="Manifold Absolute Pressure" />
+    <CATEGORY index="0xB" name="Craning" />
+    <CATEGORY index="0xC" name="After Start Correction" />
+    <CATEGORY index="0xD" name="Acceleration Enrichment" />
+    <CATEGORY index="0xE" name="Alpha-N" />
+  </XDFHEADER>
+  <XDFCONSTANT uniqueid="0x50D1" flags="0xC">
+    <title>Inject Skips</title>
+    <CATEGORYMEM index="0" category="1" />
+    <EMBEDDEDDATA mmedaddress="0xF000" mmedelementsizebits="16" />
+    <units>Skips</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <rangehigh>16.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x50D9" flags="0xC">
+    <title>Cylinders</title>
+    <CATEGORYMEM index="0" category="1" />
+    <EMBEDDEDDATA mmedaddress="0xF002" mmedelementsizebits="16" />
+    <units>Cylinders</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <rangehigh>16.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFFLAG uniqueid="0x7C09">
+    <title>Two Stroke</title>
+    <CATEGORYMEM index="0" category="1" />
+    <EMBEDDEDDATA mmedaddress="0xF004" mmedelementsizebits="16" />
+    <mask>0x1</mask>
+  </XDFFLAG>
+  <XDFTABLE uniqueid="0x312E" flags="0x34">
+    <title>RPM bins</title>
+    <CATEGORYMEM index="0" category="2" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="16" />
+      <units>RPM</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>6</datatype>
+      <unittype>4</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="rpm" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0xF002" mmedmajorstridebits="8" />
+      <units>BIN</units>
+      <indexcount>16</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" objidhash="0xCC22925A" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="1" />
+      <LABEL index="2" value="2" />
+      <LABEL index="3" value="3" />
+      <LABEL index="4" value="4" />
+      <LABEL index="5" value="5" />
+      <LABEL index="6" value="6" />
+      <LABEL index="7" value="7" />
+      <LABEL index="8" value="8" />
+      <LABEL index="9" value="9" />
+      <LABEL index="10" value="10" />
+      <LABEL index="11" value="11" />
+      <LABEL index="12" value="12" />
+      <LABEL index="13" value="13" />
+      <LABEL index="14" value="14" />
+      <LABEL index="15" value="15" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x04" mmedaddress="0xF006" mmedelementsizebits="16" mmedrowcount="16" mmedmajorstridebits="16" />
+      <units>RPM</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>16384.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0xA75" flags="0x34">
+    <title>MAP bins (kPa)</title>
+    <CATEGORYMEM index="0" category="11" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>BIN</units>
+      <indexcount>16</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>24</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" objidhash="0xE373F20" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="1" />
+      <LABEL index="2" value="2" />
+      <LABEL index="3" value="3" />
+      <LABEL index="4" value="4" />
+      <LABEL index="5" value="5" />
+      <LABEL index="6" value="6" />
+      <LABEL index="7" value="7" />
+      <LABEL index="8" value="8" />
+      <LABEL index="9" value="9" />
+      <LABEL index="10" value="10" />
+      <LABEL index="11" value="11" />
+      <LABEL index="12" value="12" />
+      <LABEL index="13" value="13" />
+      <LABEL index="14" value="14" />
+      <LABEL index="15" value="15" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>kPa</units>
+      <indexcount>1</indexcount>
+      <outputtype>2</outputtype>
+      <datatype>24</datatype>
+      <unittype>17</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x04" mmedaddress="0xF026" mmedelementsizebits="16" mmedrowcount="1" mmedcolcount="16" mmedmajorstridebits="16" />
+      <units>MAP kPa</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>350.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0x5B7C" flags="0xC">
+    <title>BOOST - Target Hysterisis</title>
+    <description>config.boost.hysterisis</description>
+    <CATEGORYMEM index="0" category="3" />
+    <EMBEDDEDDATA mmedaddress="0xF046" mmedelementsizebits="16" />
+    <units>kPa</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <rangehigh>50.000000</rangehigh>
+    <datatype>24</datatype>
+    <unittype>17</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x1B98" flags="0x30">
+    <title>BOOST - Limits TPS vs RPM (kPa)</title>
+    <CATEGORYMEM index="0" category="3" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0xF002" mmedmajorstridebits="16" />
+      <units>RPM</units>
+      <indexcount>16</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="3" linkobjid="0x312E" />
+      <datatype>6</datatype>
+      <unittype>4</unittype>
+      <DALINK index="0" flags="0x2" objidhash="0xCC22925A" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0xF022" mmedmajorstridebits="16" />
+      <units>TPS %</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="3" linkobjid="0x53F4" />
+      <datatype>57</datatype>
+      <unittype>67</unittype>
+      <DALINK index="0" flags="0x2" objidhash="0xBC64813B" />
+      <MATH equation="X / 10">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x04" mmedaddress="0xF048" mmedelementsizebits="16" mmedrowcount="10" mmedcolcount="16" mmedmajorstridebits="16" />
+      <units>MAP kPa</units>
+      <decimalpl>0</decimalpl>
+      <min>0.000000</min>
+      <max>300.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0x6E62" flags="0xC">
+    <title>CRANK - Threshold (RPM)</title>
+    <CATEGORYMEM index="0" category="12" />
+    <EMBEDDEDDATA mmedaddress="0xF188" mmedelementsizebits="16" />
+    <units>RPM</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <rangehigh>16384.000000</rangehigh>
+    <datatype>6</datatype>
+    <unittype>4</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x2B39" flags="0x30">
+    <title>CRANK - Pulse Widths vs CTS (ms)</title>
+    <CATEGORYMEM index="0" category="12" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>CPW (ms)</units>
+      <indexcount>1</indexcount>
+      <outputtype>2</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>CTS</units>
+      <indexcount>10</indexcount>
+      <embedinfo type="3" linkobjid="0x7B8A" />
+      <datatype>51</datatype>
+      <unittype>85</unittype>
+      <DALINK index="0" objidhash="0x1468106E" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xF18A" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="16" />
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>10.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 66">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x7B8A" flags="0x34">
+    <title>CTS - bins (Celsius)</title>
+    <CATEGORYMEM index="0" category="4" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Celsius</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>13</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" objidhash="0x14B53756" />
+      <LABEL index="0" value="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>BIN</units>
+      <indexcount>10</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" objidhash="0x29EC3D24" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="1" />
+      <LABEL index="2" value="2" />
+      <LABEL index="3" value="3" />
+      <LABEL index="4" value="4" />
+      <LABEL index="5" value="5" />
+      <LABEL index="6" value="6" />
+      <LABEL index="7" value="7" />
+      <LABEL index="8" value="8" />
+      <LABEL index="9" value="9" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x04" mmedaddress="0xF19E" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="16" />
+      <units>Celsius</units>
+      <decimalpl>1</decimalpl>
+      <min>-40.000000</min>
+      <max>100.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X - 273">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x782" flags="0x30">
+    <title>CTS - BPW Correction (%)</title>
+    <CATEGORYMEM index="0" category="4" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>% BPW</units>
+      <indexcount>1</indexcount>
+      <datatype>46</datatype>
+      <unittype>67</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>CTS</units>
+      <indexcount>10</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x7B8A" />
+      <datatype>13</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xF1B2" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="16" />
+      <decimalpl>2</decimalpl>
+      <min>70.000000</min>
+      <max>130.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 327.68">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x69CF" flags="0x31">
+    <title>CTS - IAR Correction (deg)</title>
+    <CATEGORYMEM index="0" category="4" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>+ADV -RET</units>
+      <indexcount>1</indexcount>
+      <datatype>41</datatype>
+      <unittype>23</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>CTS</units>
+      <indexcount>10</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x7B8A" />
+      <datatype>13</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0xF1C6" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="16" />
+      <decimalpl>2</decimalpl>
+      <min>-5.000000</min>
+      <max>5.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 2.8444">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x32AA" flags="0x30">
+    <title>CTS - Calibration (Kelvin)</title>
+    <CATEGORYMEM index="0" category="4" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <indexcount>16</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="1" />
+      <LABEL index="2" value="2" />
+      <LABEL index="3" value="3" />
+      <LABEL index="4" value="4" />
+      <LABEL index="5" value="5" />
+      <LABEL index="6" value="6" />
+      <LABEL index="7" value="7" />
+      <LABEL index="8" value="8" />
+      <LABEL index="9" value="9" />
+      <LABEL index="10" value="10" />
+      <LABEL index="11" value="11" />
+      <LABEL index="12" value="12" />
+      <LABEL index="13" value="13" />
+      <LABEL index="14" value="14" />
+      <LABEL index="15" value="15" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <indexcount>16</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="16" />
+      <LABEL index="2" value="32" />
+      <LABEL index="3" value="48" />
+      <LABEL index="4" value="64" />
+      <LABEL index="5" value="80" />
+      <LABEL index="6" value="96" />
+      <LABEL index="7" value="112" />
+      <LABEL index="8" value="128" />
+      <LABEL index="9" value="144" />
+      <LABEL index="10" value="160" />
+      <LABEL index="11" value="176" />
+      <LABEL index="12" value="192" />
+      <LABEL index="13" value="208" />
+      <LABEL index="14" value="224" />
+      <LABEL index="15" value="240" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xF1DA" mmedelementsizebits="16" mmedrowcount="16" mmedcolcount="16" mmedmajorstridebits="16" />
+      <decimalpl>1</decimalpl>
+      <min>273.000000</min>
+      <max>500.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x2828" flags="0x30">
+    <title>MAT - bins (Celsius)</title>
+    <CATEGORYMEM index="0" category="5" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>BIN</units>
+      <indexcount>10</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>18</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" objidhash="0x164C4A56" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="1" />
+      <LABEL index="2" value="2" />
+      <LABEL index="3" value="3" />
+      <LABEL index="4" value="4" />
+      <LABEL index="5" value="5" />
+      <LABEL index="6" value="6" />
+      <LABEL index="7" value="7" />
+      <LABEL index="8" value="8" />
+      <LABEL index="9" value="9" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Celsius</units>
+      <indexcount>1</indexcount>
+      <datatype>18</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xF3DE" mmedelementsizebits="16" mmedrowcount="1" mmedcolcount="10" mmedmajorstridebits="16" />
+      <units>Celsius</units>
+      <decimalpl>1</decimalpl>
+      <min>-40.000000</min>
+      <max>100.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X - 273">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x22A7" flags="0x30">
+    <title>MAT- BPW Correction (%)</title>
+    <CATEGORYMEM index="0" category="5" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>% BPW</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>46</datatype>
+      <unittype>67</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>MAT</units>
+      <indexcount>10</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x7B8A" />
+      <datatype>18</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xF3F2" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="16" />
+      <decimalpl>2</decimalpl>
+      <min>70.000000</min>
+      <max>130.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 327.68">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x3C3E" flags="0x31">
+    <title>MAT - IAR Correction (deg)</title>
+    <CATEGORYMEM index="0" category="5" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>+ADV -RET</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>41</datatype>
+      <unittype>23</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>MAT</units>
+      <indexcount>10</indexcount>
+      <embedinfo type="3" linkobjid="0x7B8A" />
+      <datatype>18</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0xF406" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="16" />
+      <decimalpl>2</decimalpl>
+      <min>-5.000000</min>
+      <max>5.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 2.8444">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x4A9C" flags="0x30">
+    <title>MAT - Calibration (Kelvin)</title>
+    <CATEGORYMEM index="0" category="5" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <indexcount>16</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="1" />
+      <LABEL index="2" value="2" />
+      <LABEL index="3" value="3" />
+      <LABEL index="4" value="4" />
+      <LABEL index="5" value="5" />
+      <LABEL index="6" value="6" />
+      <LABEL index="7" value="7" />
+      <LABEL index="8" value="8" />
+      <LABEL index="9" value="9" />
+      <LABEL index="10" value="10" />
+      <LABEL index="11" value="11" />
+      <LABEL index="12" value="12" />
+      <LABEL index="13" value="13" />
+      <LABEL index="14" value="14" />
+      <LABEL index="15" value="15" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <indexcount>16</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="16" />
+      <LABEL index="2" value="32" />
+      <LABEL index="3" value="48" />
+      <LABEL index="4" value="64" />
+      <LABEL index="5" value="80" />
+      <LABEL index="6" value="96" />
+      <LABEL index="7" value="112" />
+      <LABEL index="8" value="128" />
+      <LABEL index="9" value="144" />
+      <LABEL index="10" value="160" />
+      <LABEL index="11" value="176" />
+      <LABEL index="12" value="192" />
+      <LABEL index="13" value="208" />
+      <LABEL index="14" value="224" />
+      <LABEL index="15" value="240" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xF41A" mmedelementsizebits="16" mmedrowcount="16" mmedcolcount="16" mmedmajorstridebits="16" />
+      <decimalpl>1</decimalpl>
+      <min>273.000000</min>
+      <max>500.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0xE98" flags="0x30">
+    <title>ASC - Correction vs CTS (%)</title>
+    <CATEGORYMEM index="0" category="13" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>% BPW</units>
+      <indexcount>1</indexcount>
+      <datatype>46</datatype>
+      <unittype>67</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>CTS</units>
+      <indexcount>10</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x7B8A" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xF61A" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="16" />
+      <decimalpl>2</decimalpl>
+      <min>70.000000</min>
+      <max>130.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 327.68">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x2EF0" flags="0x30">
+    <title>ASC - Duration vs CTS (injects)</title>
+    <CATEGORYMEM index="0" category="13" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Injects</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>CTS</units>
+      <indexcount>10</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x7B8A" />
+      <datatype>13</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xF62E" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="16" />
+      <units>Injects</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>1000.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x5C39" flags="0x30">
+    <title>BPW - RPM vs MAP (ms) </title>
+    <CATEGORYMEM index="0" category="6" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>MAP</units>
+      <indexcount>16</indexcount>
+      <embedinfo type="3" linkobjid="0xA75" />
+      <datatype>24</datatype>
+      <unittype>17</unittype>
+      <DALINK index="0" flags="0x2" objidhash="0xCC22925A" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>RPM</units>
+      <indexcount>16</indexcount>
+      <embedinfo type="3" linkobjid="0x312E" />
+      <datatype>6</datatype>
+      <unittype>4</unittype>
+      <DALINK index="0" flags="0x2" objidhash="0xE373F20" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x04" mmedaddress="0xF642" mmedelementsizebits="16" mmedrowcount="16" mmedcolcount="16" mmedmajorstridebits="16" />
+      <units>ms</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>20.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 66">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x2237" flags="0x30">
+    <title>BPW - Open Delay vs VOLT (ms)</title>
+    <CATEGORYMEM index="0" category="6" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>ms</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>46</datatype>
+      <unittype>85</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Volts</units>
+      <indexcount>9</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="3.2" />
+      <LABEL index="2" value="6.4" />
+      <LABEL index="3" value="9.6" />
+      <LABEL index="4" value="12.8" />
+      <LABEL index="5" value="16.0" />
+      <LABEL index="6" value="19.2" />
+      <LABEL index="7" value="22.4" />
+      <LABEL index="8" value="25.5" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xF842" mmedelementsizebits="16" mmedrowcount="9" mmedmajorstridebits="16" />
+      <units>ms</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>5.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 66">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0x5B3B" flags="0x1">
+    <title>IGN - Reference Angle (deg)</title>
+    <CATEGORYMEM index="0" category="7" />
+    <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0xF854" mmedelementsizebits="16" />
+    <units>+adv / -ret</units>
+    <rangehigh>60.000000</rangehigh>
+    <rangelow>-60.000000</rangelow>
+    <datatype>40</datatype>
+    <unittype>23</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 2.8444">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFFLAG uniqueid="0x7A81">
+    <title>IGN - Cranking Bypass</title>
+    <CATEGORYMEM index="0" category="7" />
+    <EMBEDDEDDATA mmedaddress="0xF856" mmedelementsizebits="16" />
+    <mask>0x1</mask>
+  </XDFFLAG>
+  <XDFCONSTANT uniqueid="0x3CD6">
+    <title>IGN - Cranking Dwell</title>
+    <CATEGORYMEM index="0" category="7" />
+    <EMBEDDEDDATA mmedaddress="0xF858" mmedelementsizebits="16" />
+    <units>ms</units>
+    <datatype>0</datatype>
+    <unittype>85</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 66">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x761A" flags="0x30">
+    <title>IGN - Dwell vs VOLT (ms)</title>
+    <CATEGORYMEM index="0" category="7" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>ms</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>85</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Volts</units>
+      <indexcount>9</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="3.2" />
+      <LABEL index="2" value="6.4" />
+      <LABEL index="3" value="9.6" />
+      <LABEL index="4" value="12.8" />
+      <LABEL index="5" value="16.0" />
+      <LABEL index="6" value="19.2" />
+      <LABEL index="7" value="22.4" />
+      <LABEL index="8" value="25.5" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xF85A" mmedelementsizebits="16" mmedrowcount="9" mmedmajorstridebits="16" />
+      <units>ms</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>10.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 66">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0x462C">
+    <title>IGN - Minimum Dwell (ms)</title>
+    <CATEGORYMEM index="0" category="7" />
+    <EMBEDDEDDATA mmedaddress="0xF86C" mmedelementsizebits="16" />
+    <units>ms</units>
+    <datatype>0</datatype>
+    <unittype>85</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 66">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x46B">
+    <title>IGN - Maximum Dwell (ms)</title>
+    <CATEGORYMEM index="0" category="7" />
+    <EMBEDDEDDATA mmedaddress="0xF86E" mmedelementsizebits="16" />
+    <units>ms</units>
+    <datatype>0</datatype>
+    <unittype>85</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 66">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x12E2" flags="0x1">
+    <title>IGN - Minimum IAR (deg)</title>
+    <CATEGORYMEM index="0" category="7" />
+    <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0xF870" mmedelementsizebits="16" />
+    <units>+adv / -ret</units>
+    <rangehigh>10.000000</rangehigh>
+    <rangelow>-10.000000</rangelow>
+    <datatype>39</datatype>
+    <unittype>23</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 2.8444">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x5849">
+    <title>IGN - Maximum IAR (deg)</title>
+    <CATEGORYMEM index="0" category="7" />
+    <EMBEDDEDDATA mmedaddress="0xF872" mmedelementsizebits="16" />
+    <units>+adv / -ret</units>
+    <datatype>39</datatype>
+    <unittype>23</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 2.8444">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x582B" flags="0x31">
+    <title>IGN - BIAR RPM vs MAP (deg)</title>
+    <CATEGORYMEM index="0" category="7" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>RPM</units>
+      <indexcount>16</indexcount>
+      <embedinfo type="3" linkobjid="0x312E" />
+      <datatype>6</datatype>
+      <unittype>4</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>MAP</units>
+      <indexcount>16</indexcount>
+      <embedinfo type="3" linkobjid="0xA75" />
+      <datatype>24</datatype>
+      <unittype>17</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x05" mmedaddress="0xF874" mmedelementsizebits="16" mmedrowcount="16" mmedcolcount="16" mmedmajorstridebits="16" />
+      <units>degrees</units>
+      <decimalpl>1</decimalpl>
+      <min>-10.000000</min>
+      <max>60.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 2.8444">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0x5A70">
+    <title>TPS - ADC @0V (count)</title>
+    <CATEGORYMEM index="0" category="9" />
+    <EMBEDDEDDATA mmedaddress="0xFA74" mmedelementsizebits="16" />
+    <units>Count</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>57</datatype>
+    <unittype>26</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x4403">
+    <title>TPS - ADC @5V (count)</title>
+    <CATEGORYMEM index="0" category="9" />
+    <EMBEDDEDDATA mmedaddress="0xFA76" mmedelementsizebits="16" />
+    <units>Count</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>57</datatype>
+    <unittype>26</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x2B42" flags="0xC">
+    <title>TPS - Flood Clear (%)</title>
+    <CATEGORYMEM index="0" category="9" />
+    <EMBEDDEDDATA mmedaddress="0xFA78" mmedelementsizebits="16" />
+    <units>%</units>
+    <decimalpl>1</decimalpl>
+    <rangehigh>100.000000</rangehigh>
+    <datatype>57</datatype>
+    <unittype>67</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 10">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x53F4" flags="0x30">
+    <title>TPS - bins (%)</title>
+    <CATEGORYMEM index="0" category="9" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>BIN</units>
+      <indexcount>10</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>57</datatype>
+      <unittype>67</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="1" />
+      <LABEL index="2" value="2" />
+      <LABEL index="3" value="3" />
+      <LABEL index="4" value="4" />
+      <LABEL index="5" value="5" />
+      <LABEL index="6" value="6" />
+      <LABEL index="7" value="7" />
+      <LABEL index="8" value="8" />
+      <LABEL index="9" value="9" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>%</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>57</datatype>
+      <unittype>67</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="%" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xFA7A" mmedelementsizebits="16" mmedrowcount="1" mmedcolcount="10" mmedmajorstridebits="16" />
+      <units>%</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>100.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 10">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0xD3E">
+    <title>MAP - ADC @0V (kPa)</title>
+    <CATEGORYMEM index="0" category="11" />
+    <EMBEDDEDDATA mmedaddress="0xFA8E" mmedelementsizebits="16" />
+    <units>kPa</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>24</datatype>
+    <unittype>17</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x2119" flags="0xC">
+    <title>MAP - ADC @5V (kPa) </title>
+    <CATEGORYMEM index="0" category="11" />
+    <EMBEDDEDDATA mmedaddress="0xFA90" mmedelementsizebits="16" />
+    <units>kPa</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <rangehigh>350.000000</rangehigh>
+    <datatype>24</datatype>
+    <unittype>17</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFFLAG uniqueid="0x5D4A">
+    <title>IAC - Enabled</title>
+    <CATEGORYMEM index="0" category="8" />
+    <EMBEDDEDDATA mmedaddress="0xFA92" mmedelementsizebits="16" />
+    <mask>0x1</mask>
+  </XDFFLAG>
+  <XDFCONSTANT uniqueid="0x3CF8">
+    <title>IAC - Range (Steps)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <EMBEDDEDDATA mmedaddress="0xFA94" mmedelementsizebits="16" />
+    <units>Steps</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>36</datatype>
+    <unittype>27</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x61BE">
+    <title>IAC - Update (ms)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <EMBEDDEDDATA mmedaddress="0xFA96" mmedelementsizebits="16" />
+    <units>ms</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>0</datatype>
+    <unittype>85</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x5646" flags="0x30">
+    <title>IAC - CTS bins (Celsius)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Celsius</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>13</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>BIN</units>
+      <indexcount>4</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="1" />
+      <LABEL index="2" value="2" />
+      <LABEL index="3" value="3" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xFA98" mmedelementsizebits="16" mmedrowcount="4" mmedmajorstridebits="16" />
+      <units>Celsius</units>
+      <decimalpl>1</decimalpl>
+      <min>-40.000000</min>
+      <max>100.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X - 273">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x856" flags="0x30">
+    <title>IAC - Idle vs CTS (RPM)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>RPM</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>37</datatype>
+      <unittype>4</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Celcius</units>
+      <indexcount>4</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x5646" />
+      <datatype>13</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xFAA0" mmedelementsizebits="16" mmedrowcount="4" mmedmajorstridebits="16" />
+      <units>RPM</units>
+      <decimalpl>1</decimalpl>
+      <min>500.000000</min>
+      <max>1500.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x4848" flags="0x30">
+    <title>IAC - Cranking vs CTS (Steps)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Steps</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>36</datatype>
+      <unittype>27</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Celcius</units>
+      <indexcount>4</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x5646" />
+      <datatype>13</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xFAA8" mmedelementsizebits="16" mmedrowcount="4" mmedmajorstridebits="16" />
+      <units>Steps</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x1D2A" flags="0x30">
+    <title>IAC Idle Start vs CTS (Steps)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Steps</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>36</datatype>
+      <unittype>27</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Celcius</units>
+      <indexcount>4</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x5646" />
+      <datatype>13</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xFAB0" mmedelementsizebits="16" mmedrowcount="4" mmedmajorstridebits="16" />
+      <units>Steps</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0x108D">
+    <title>IAC - @ 100% TPS (Steps)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <EMBEDDEDDATA mmedaddress="0xFAB8" mmedelementsizebits="16" />
+    <units>Steps</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>36</datatype>
+    <unittype>27</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x4BA" flags="0x30">
+    <title>IAC - Minimum vs CTS (Steps)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Steps</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>36</datatype>
+      <unittype>27</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Celcius</units>
+      <indexcount>4</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="3" linkobjid="0x5646" />
+      <datatype>13</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xFABA" mmedelementsizebits="16" mmedrowcount="4" mmedmajorstridebits="16" />
+      <units>Steps</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0x103F">
+    <title>IAC - Idle Hysterisis (RPM)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <EMBEDDEDDATA mmedaddress="0xFAC2" mmedelementsizebits="16" />
+    <units>RPM</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>6</datatype>
+    <unittype>4</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x4698">
+    <title>IAC - Maximum ROC (RPM)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <EMBEDDEDDATA mmedaddress="0xFAC4" mmedelementsizebits="16" />
+    <units>RPM</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>6</datatype>
+    <unittype>4</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x7DA1">
+    <title>IAC - Max TPS (%)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <EMBEDDEDDATA mmedaddress="0xFAC6" mmedelementsizebits="16" />
+    <units>%</units>
+    <decimalpl>1</decimalpl>
+    <datatype>57</datatype>
+    <unittype>67</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 10">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0xBF3">
+    <title>IAC - Delay (seconds)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <EMBEDDEDDATA mmedaddress="0xFAC8" />
+    <units>Seconds</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>0</datatype>
+    <unittype>84</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x39BD" flags="0x30">
+    <title>RPM - Limits vs CTS (RPM)</title>
+    <CATEGORYMEM index="0" category="2" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>RPM</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>6</datatype>
+      <unittype>4</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Celcius</units>
+      <indexcount>10</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x7B8A" />
+      <datatype>13</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xFACA" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="16" />
+      <units>RPM</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>16384.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0x2ED0">
+    <title>RPM - Limit Hysterisis (RPM)</title>
+    <CATEGORYMEM index="0" category="2" />
+    <EMBEDDEDDATA mmedaddress="0xFADE" mmedelementsizebits="16" />
+    <units>RPM</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>6</datatype>
+    <unittype>4</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x63DC">
+    <title>RPM - Soft Offset (RPM)</title>
+    <CATEGORYMEM index="0" category="2" />
+    <EMBEDDEDDATA mmedaddress="0xFAE0" mmedelementsizebits="16" />
+    <units>RPM</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>6</datatype>
+    <unittype>4</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x6776" flags="0x1">
+    <title>RPM - Limit Soft IAR (deg)</title>
+    <CATEGORYMEM index="0" category="2" />
+    <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0xFAE2" mmedelementsizebits="16" />
+    <units>+adv / -ret</units>
+    <decimalpl>1</decimalpl>
+    <datatype>45</datatype>
+    <unittype>23</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 2.8444">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x4129" flags="0x1">
+    <title>RPM - Limit Hard IAR (deg)</title>
+    <CATEGORYMEM index="0" category="2" />
+    <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0xFAE4" mmedelementsizebits="16" />
+    <units>+adv / -ret</units>
+    <decimalpl>1</decimalpl>
+    <datatype>45</datatype>
+    <unittype>23</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 2.8444">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFFLAG uniqueid="0x60D8">
+    <title>EGO - Enabled</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFAE6" mmedelementsizebits="16" />
+    <mask>0x1</mask>
+  </XDFFLAG>
+  <XDFCONSTANT uniqueid="0x494">
+    <title>EGO - Update (ms)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFAE8" mmedelementsizebits="16" />
+    <units>ms</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>0</datatype>
+    <unittype>85</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x3E5A" flags="0xC">
+    <title>EGO - Minimum RPM (RPM)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFAEA" mmedelementsizebits="16" />
+    <units>RPM</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <rangehigh>16384.000000</rangehigh>
+    <datatype>13</datatype>
+    <unittype>4</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x364B" flags="0xC">
+    <title>EGO - Maximum RPM (RPM)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFAEC" mmedelementsizebits="16" />
+    <units>RPM</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <rangehigh>16384.000000</rangehigh>
+    <datatype>6</datatype>
+    <unittype>4</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x47C4" flags="0xC">
+    <title>EGO - Minimum TPS (%)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFAEE" mmedelementsizebits="16" />
+    <units>%</units>
+    <decimalpl>1</decimalpl>
+    <rangehigh>100.000000</rangehigh>
+    <datatype>57</datatype>
+    <unittype>67</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 10">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x73DA" flags="0xC">
+    <title>EGO - Maximum TPS (%)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFAF0" mmedelementsizebits="16" />
+    <units>%</units>
+    <decimalpl>1</decimalpl>
+    <rangehigh>100.000000</rangehigh>
+    <datatype>57</datatype>
+    <unittype>67</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 10">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x1870" flags="0xC">
+    <title>EGO - Minimum MAP (kPa)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFAF2" mmedelementsizebits="16" />
+    <units>kPa</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <rangehigh>350.000000</rangehigh>
+    <datatype>24</datatype>
+    <unittype>17</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x7951" flags="0xC">
+    <title>EGO - Maximum MAP (kPa)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFAF4" mmedelementsizebits="16" />
+    <units>kPa</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <rangehigh>350.000000</rangehigh>
+    <datatype>24</datatype>
+    <unittype>17</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x3059">
+    <title>EGO - Minimum Uptime (seconds)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFAF6" mmedelementsizebits="16" />
+    <units>Seconds</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>0</datatype>
+    <unittype>84</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x22E1" flags="0xC">
+    <title>EGO - Minimum CTS (celcius)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFAF8" mmedelementsizebits="16" />
+    <units>Celcuis</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <rangehigh>100.000000</rangehigh>
+    <rangelow>-40.000000</rangelow>
+    <datatype>13</datatype>
+    <unittype>15</unittype>
+    <DALINK index="0" />
+    <MATH equation="X - 273">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0xA76" flags="0xC">
+    <title>EGO - Minimum Correct (%)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFAFA" mmedelementsizebits="16" />
+    <units>%</units>
+    <rangehigh>200.000000</rangehigh>
+    <datatype>50</datatype>
+    <unittype>67</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 327.68">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x67B3" flags="0xE">
+    <title>EGO - Maximum Correction (%)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xFAFC" mmedelementsizebits="16" />
+    <units>%</units>
+    <rangehigh>200.000000</rangehigh>
+    <datatype>50</datatype>
+    <unittype>67</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 327.68">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x4184" flags="0xC">
+    <title>EGO - Transient Delay (seconds)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFAFE" mmedelementsizebits="16" />
+    <units>Seconds</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <rangehigh>10.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>84</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x2CF" flags="0xC">
+    <title>EGO - Proportional Gain (%)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFB00" mmedelementsizebits="16" />
+    <units>%</units>
+    <rangehigh>200.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>67</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / .5 * 129 / 327.68">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x1EEF" flags="0xC">
+    <title>EGO - Integral Gain (%)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <EMBEDDEDDATA mmedaddress="0xFB02" mmedelementsizebits="16" />
+    <units>%</units>
+    <rangehigh>200.000000</rangehigh>
+    <datatype>0</datatype>
+    <unittype>67</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / .5 * 129 / 327.68">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x2E12" flags="0x34">
+    <title>EGO - Targets RPM vs MAP (LAMBDA)</title>
+    <CATEGORYMEM index="0" category="10" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0xF036" mmedmajorstridebits="16" />
+      <units>MAP kPa</units>
+      <indexcount>16</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="3" linkobjid="0xA75" />
+      <datatype>24</datatype>
+      <unittype>17</unittype>
+      <DALINK index="0" flags="0x2" objidhash="0x7ABD8E" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0xF002" mmedmajorstridebits="16" />
+      <units>RPM</units>
+      <indexcount>16</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="3" linkobjid="0x312E" />
+      <datatype>6</datatype>
+      <unittype>4</unittype>
+      <DALINK index="0" flags="0x2" objidhash="0xCD09ACDB" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x04" mmedaddress="0xFB04" mmedelementsizebits="16" mmedrowcount="16" mmedcolcount="16" mmedmajorstridebits="16" />
+      <units>LAMBDA</units>
+      <decimalpl>2</decimalpl>
+      <min>0.500000</min>
+      <max>1.500000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="(.5 / 128) * X + .5">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0x14A6">
+    <title>AE - Injects (count)</title>
+    <CATEGORYMEM index="0" category="14" />
+    <EMBEDDEDDATA mmedaddress="0xFD04" mmedelementsizebits="16" />
+    <units>Injects</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>0</datatype>
+    <unittype>26</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x4B99">
+    <title>AE - TPS Threshold (%/50ms)</title>
+    <CATEGORYMEM index="0" category="14" />
+    <EMBEDDEDDATA mmedaddress="0xFD06" mmedelementsizebits="16" />
+    <units>%/50ms</units>
+    <decimalpl>1</decimalpl>
+    <datatype>57</datatype>
+    <unittype>67</unittype>
+    <DALINK index="0" />
+    <MATH equation="X / 10">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x268D" flags="0x30">
+    <title>AE - TPS bins (%)</title>
+    <CATEGORYMEM index="0" category="14" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>BIN</units>
+      <indexcount>4</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>57</datatype>
+      <unittype>67</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="1" />
+      <LABEL index="2" value="2" />
+      <LABEL index="3" value="3" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>%</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xFD08" mmedelementsizebits="16" mmedrowcount="1" mmedcolcount="4" mmedmajorstridebits="16" />
+      <units>%</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>100.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 10">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x36D3" flags="0x30">
+    <title>AE - RPM bins</title>
+    <CATEGORYMEM index="0" category="14" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>RPM</units>
+      <indexcount>1</indexcount>
+      <datatype>6</datatype>
+      <unittype>4</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>BIN</units>
+      <indexcount>4</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="1" />
+      <LABEL index="2" value="2" />
+      <LABEL index="3" value="3" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xFD10" mmedelementsizebits="16" mmedrowcount="4" mmedmajorstridebits="16" />
+      <units>RPM</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>16384.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x487C" flags="0x30">
+    <title>AE - ROC bins (%/50ms)</title>
+    <CATEGORYMEM index="0" category="14" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>%/50ms</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>57</datatype>
+      <unittype>67</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>BIN</units>
+      <indexcount>4</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="1" />
+      <LABEL index="2" value="2" />
+      <LABEL index="3" value="3" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xFD18" mmedelementsizebits="16" mmedrowcount="4" mmedmajorstridebits="16" />
+      <units>%/50ms</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>100.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 10">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x23C8" flags="0x30">
+    <title>AE - ROC Factor (%)</title>
+    <CATEGORYMEM index="0" category="14" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>%</units>
+      <indexcount>1</indexcount>
+      <datatype>46</datatype>
+      <unittype>67</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>%/50ms</units>
+      <indexcount>4</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x487C" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xFD20" mmedelementsizebits="16" mmedrowcount="4" mmedmajorstridebits="16" />
+      <units>%</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>100.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 327.68">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x8D1" flags="0x30">
+    <title>AE - CTS Factor (%)</title>
+    <CATEGORYMEM index="0" category="14" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>%</units>
+      <indexcount>1</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>46</datatype>
+      <unittype>67</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>Celcius</units>
+      <indexcount>10</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x7B8A" />
+      <datatype>13</datatype>
+      <unittype>15</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0xFD28" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="16" />
+      <units>%</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>200.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 327.68">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x64AB" flags="0x30">
+    <title>AE - BPW RPM vs TPS (ms)</title>
+    <CATEGORYMEM index="0" category="14" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>RPM</units>
+      <indexcount>4</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x36D3" />
+      <datatype>6</datatype>
+      <unittype>4</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>TPS %</units>
+      <indexcount>4</indexcount>
+      <embedinfo type="3" linkobjid="0x268D" />
+      <datatype>57</datatype>
+      <unittype>67</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x04" mmedaddress="0xFD3C" mmedelementsizebits="16" mmedrowcount="4" mmedcolcount="4" mmedmajorstridebits="16" />
+      <units>ms</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>10.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 66">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0x2704">
+    <title>ALPHA - Start MAP (RPM)</title>
+    <CATEGORYMEM index="0" category="15" />
+    <EMBEDDEDDATA mmedaddress="0xFD5C" mmedelementsizebits="16" />
+    <units>RPM</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>6</datatype>
+    <unittype>4</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x7549">
+    <title>ALPHA - Full MAP (RPM)</title>
+    <CATEGORYMEM index="0" category="15" />
+    <EMBEDDEDDATA mmedaddress="0xFD5E" mmedelementsizebits="16" />
+    <units>RPM</units>
+    <outputtype>2</outputtype>
+    <decimalpl>1</decimalpl>
+    <datatype>6</datatype>
+    <unittype>4</unittype>
+    <DALINK index="0" />
+    <MATH equation="X">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x7CC3" flags="0x30">
+    <title>ALPHA - BPW RPM vs TPS (ms)</title>
+    <CATEGORYMEM index="0" category="15" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>RPM</units>
+      <indexcount>16</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x312E" />
+      <datatype>6</datatype>
+      <unittype>4</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>TPS %</units>
+      <indexcount>10</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x53F4" />
+      <datatype>57</datatype>
+      <unittype>96</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x04" mmedaddress="0xFD60" mmedelementsizebits="16" mmedrowcount="10" mmedcolcount="16" mmedmajorstridebits="16" />
+      <units>ms</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>20.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x1E54" flags="0x30">
+    <title>ALPHA - BIAR RPM vs TPS (ms)</title>
+    <CATEGORYMEM index="0" category="15" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>RPM</units>
+      <indexcount>16</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x312E" />
+      <datatype>6</datatype>
+      <unittype>4</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedmajorstridebits="-32" />
+      <units>TPS %</units>
+      <indexcount>10</indexcount>
+      <outputtype>4</outputtype>
+      <embedinfo type="3" linkobjid="0x53F4" />
+      <datatype>57</datatype>
+      <unittype>67</unittype>
+      <DALINK index="0" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedtypeflags="0x05" mmedaddress="0xFEA0" mmedelementsizebits="16" mmedrowcount="10" mmedcolcount="16" mmedmajorstridebits="16" />
+      <units>degrees</units>
+      <decimalpl>1</decimalpl>
+      <min>-10.000000</min>
+      <max>60.000000</max>
+      <outputtype>1</outputtype>
+      <MATH equation="X / 2.8444">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFCONSTANT uniqueid="0x5794">
+    <title>FAN - on</title>
+    <EMBEDDEDDATA mmedaddress="0xF3DA" mmedelementsizebits="16" />
+    <units>Celsius</units>
+    <outputtype>2</outputtype>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="X - 273">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+  <XDFCONSTANT uniqueid="0x673">
+    <title>FAN - off</title>
+    <EMBEDDEDDATA mmedaddress="0xF3DC" mmedelementsizebits="16" />
+    <units>Celsius</units>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="X - 273">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+</XDFFORMAT>

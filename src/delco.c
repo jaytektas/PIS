@@ -231,9 +231,9 @@ USHORT APW, AIAR;
 			    APW =
 				    interpolate_u16(status.rpm.rpm, config.rpm_bins[status.idx.rpm], config.rpm_bins[status.idx.rpm+1],
 				    	interpolate_u16(status.tps.tps, config.tps.bins[status.idx.tps], config.tps.bins[status.idx.tps+1],
-				    		config.alpha_N.BPW[status.idx.tps][status.idx.rpm], config.alpha_N.BPW[status.idx.tps+1][status.idx.rpm]),
+				    		config.alpha_N.BPW[status.idx.rpm][status.idx.tps], config.alpha_N.BPW[status.idx.rpm][status.idx.tps+1]),
 						    	interpolate_u16(status.tps.tps, config.tps.bins[status.idx.tps], config.tps.bins[status.idx.tps+1],
-						    		config.alpha_N.BPW[status.idx.tps][status.idx.rpm+1], config.alpha_N.BPW[status.idx.tps+1][status.idx.rpm+1]));
+						    		config.alpha_N.BPW[status.idx.rpm+1][status.idx.tps], config.alpha_N.BPW[status.idx.rpm+1][status.idx.tps+1]));
 
 			    if (status.rpm.rpm > config.alpha_N.start_map_rpm)
 			    {
@@ -241,15 +241,15 @@ USHORT APW, AIAR;
 
 					    interpolate_u16(status.rpm.rpm, config.rpm_bins[status.idx.rpm], config.rpm_bins[status.idx.rpm+1],
 					    	interpolate_u16(status.tps.tps, config.tps.bins[status.idx.tps], config.tps.bins[status.idx.tps+1],
-					    		config.alpha_N.BPW[status.idx.tps][status.idx.rpm], config.alpha_N.BPW[status.idx.tps+1][status.idx.rpm]),
+					    		config.alpha_N.BPW[status.idx.rpm][status.idx.tps], config.alpha_N.BPW[status.idx.rpm][status.idx.tps+1]),
 							    	interpolate_u16(status.tps.tps, config.tps.bins[status.idx.tps], config.tps.bins[status.idx.tps+1],
-							    		config.alpha_N.BPW[status.idx.tps][status.idx.rpm+1], config.alpha_N.BPW[status.idx.tps+1][status.idx.rpm+1])),
+							    		config.alpha_N.BPW[status.idx.rpm+1][status.idx.tps], config.alpha_N.BPW[status.idx.rpm+1][status.idx.tps+1])),
 
 					    interpolate_u16(status.rpm.rpm, config.rpm_bins[status.idx.rpm], config.rpm_bins[status.idx.rpm+1],
 					    	interpolate_u16(status.map.map, config.map_bins[status.idx.map], config.map_bins[status.idx.map+1],
-					    		config.BPW[status.idx.map][status.idx.rpm], config.BPW[status.idx.map+1][status.idx.rpm]) ,
+					    		config.BPW[status.idx.rpm][status.idx.map], config.BPW[status.idx.rpm][status.idx.map+1]) ,
 							    	interpolate_u16(status.map.map, config.map_bins[status.idx.map], config.map_bins[status.idx.map+1],
-							    		config.BPW[status.idx.map][status.idx.rpm+1], config.BPW[status.idx.map+1][status.idx.rpm+1])));
+							    		config.BPW[status.idx.rpm+1][status.idx.map], config.BPW[status.idx.rpm+1][status.idx.map+1])));
 			    }
 			}
 			else
@@ -259,9 +259,9 @@ USHORT APW, AIAR;
 			    APW =
 				    interpolate_u16(status.rpm.rpm, config.rpm_bins[status.idx.rpm], config.rpm_bins[status.idx.rpm+1],
 				    	interpolate_u16(status.map.map, config.map_bins[status.idx.map], config.map_bins[status.idx.map+1],
-				    		config.BPW[status.idx.map][status.idx.rpm], config.BPW[status.idx.map+1][status.idx.rpm]),
+				    		config.BPW[status.idx.rpm][status.idx.map], config.BPW[status.idx.rpm][status.idx.map+1]),
 						    	interpolate_u16(status.map.map, config.map_bins[status.idx.map], config.map_bins[status.idx.map+1],
-						    		config.BPW[status.idx.map][status.idx.rpm+1], config.BPW[status.idx.map+1][status.idx.rpm+1]));
+						    		config.BPW[status.idx.rpm+1][status.idx.map], config.BPW[status.idx.rpm+1][status.idx.map+1]));
 			}
 
 			// CTS fuel correction
@@ -352,9 +352,9 @@ USHORT APW, AIAR;
 			    AIAR =
 				    interpolate_u16(status.rpm.rpm, config.rpm_bins[status.idx.rpm], config.rpm_bins[status.idx.rpm+1],
 				    	interpolate_u16(status.tps.tps, config.tps.bins[status.idx.tps], config.tps.bins[status.idx.tps+1],
-				    		config.alpha_N.BIAR[status.idx.tps][status.idx.rpm], config.alpha_N.BIAR[status.idx.tps+1][status.idx.rpm]),
+				    		config.alpha_N.BIAR[status.idx.rpm][status.idx.tps], config.alpha_N.BIAR[status.idx.rpm][status.idx.tps+1]),
 						    	interpolate_u16(status.tps.tps, config.tps.bins[status.idx.tps], config.tps.bins[status.idx.tps+1],
-						    		config.alpha_N.BIAR[status.idx.tps][status.idx.rpm+1], config.alpha_N.BIAR[status.idx.tps+1][status.idx.rpm+1]));
+						    		config.alpha_N.BIAR[status.idx.rpm+1][status.idx.tps], config.alpha_N.BIAR[status.idx.rpm+1][status.idx.tps+1]));
 
 			    if (status.rpm.rpm > config.alpha_N.start_map_rpm)
 			    {
@@ -362,15 +362,15 @@ USHORT APW, AIAR;
 
 					    interpolate_u16(status.rpm.rpm, config.rpm_bins[status.idx.rpm], config.rpm_bins[status.idx.rpm+1],
 					    	interpolate_u16(status.tps.tps, config.tps.bins[status.idx.tps], config.tps.bins[status.idx.tps+1],
-					    		config.alpha_N.BIAR[status.idx.tps][status.idx.rpm], config.alpha_N.BIAR[status.idx.tps+1][status.idx.rpm]),
+					    		config.alpha_N.BIAR[status.idx.rpm][status.idx.tps], config.alpha_N.BIAR[status.idx.rpm][status.idx.tps+1]),
 							    	interpolate_u16(status.tps.tps, config.tps.bins[status.idx.tps], config.tps.bins[status.idx.tps+1],
-							    		config.alpha_N.BIAR[status.idx.tps][status.idx.rpm+1], config.alpha_N.BIAR[status.idx.tps+1][status.idx.rpm+1])),
+							    		config.alpha_N.BIAR[status.idx.rpm+1][status.idx.tps], config.alpha_N.BIAR[status.idx.rpm+1][status.idx.tps+1])),
 
 					    interpolate_u16(status.rpm.rpm, config.rpm_bins[status.idx.rpm], config.rpm_bins[status.idx.rpm+1],
 					    	interpolate_u16(status.map.map, config.map_bins[status.idx.map], config.map_bins[status.idx.map+1],
-					    		config.ign.BIAR[status.idx.map][status.idx.rpm], config.ign.BIAR[status.idx.map+1][status.idx.rpm]) ,
+					    		config.ign.BIAR[status.idx.rpm][status.idx.map], config.ign.BIAR[status.idx.rpm][status.idx.map+1]) ,
 							    	interpolate_u16(status.map.map, config.map_bins[status.idx.map], config.map_bins[status.idx.map+1],
-							    		config.ign.BIAR[status.idx.map][status.idx.rpm+1], config.ign.BIAR[status.idx.map+1][status.idx.rpm+1])));
+							    		config.ign.BIAR[status.idx.rpm+1][status.idx.map], config.ign.BIAR[status.idx.rpm+1][status.idx.map+1])));
 			    }
 		}
 		else
@@ -379,9 +379,9 @@ USHORT APW, AIAR;
 		    AIAR =
 			    interpolate_s16(status.rpm.rpm, config.rpm_bins[status.idx.rpm], config.rpm_bins[status.idx.rpm+1],
 			    	interpolate_s16(status.map.map, config.map_bins[status.idx.map], config.map_bins[status.idx.map+1],
-			    		config.ign.BIAR[status.idx.map][status.idx.rpm], config.ign.BIAR[status.idx.map+1][status.idx.rpm]) ,
+			    		config.ign.BIAR[status.idx.rpm][status.idx.map], config.ign.BIAR[status.idx.rpm][status.idx.map+1]) ,
 					    	interpolate_s16(status.map.map, config.map_bins[status.idx.map], config.map_bins[status.idx.map+1],
-					    		config.ign.BIAR[status.idx.map][status.idx.rpm+1], config.ign.BIAR[status.idx.map+1][status.idx.rpm+1])
+					    		config.ign.BIAR[status.idx.rpm+1][status.idx.map], config.ign.BIAR[status.idx.rpm+1][status.idx.map+1])
 		    	);
 		}
 
@@ -468,9 +468,9 @@ USHORT AEBPW;
     status.map.limit =
         interpolate_u16(status.rpm.rpm, config.rpm_bins[status.idx.rpm], config.rpm_bins[status.idx.rpm+1],
     		interpolate_u16(status.tps.tps, config.tps.bins[status.idx.tps], config.tps.bins[status.idx.tps+1],
-		    	config.boost.target[status.idx.tps][status.idx.rpm], config.boost.target[status.idx.tps+1][status.idx.rpm]),
+		    	config.boost.target[status.idx.rpm][status.idx.tps], config.boost.target[status.idx.rpm][status.idx.tps+1]),
 		    		interpolate_u16(status.tps.tps, config.tps.bins[status.idx.tps], config.tps.bins[status.idx.tps+1],
-		    			config.boost.target[status.idx.tps][status.idx.rpm+1], config.boost.target[status.idx.tps+1][status.idx.rpm+1]));
+		    			config.boost.target[status.idx.rpm+1][status.idx.tps], config.boost.target[status.idx.rpm+1][status.idx.tps+1]));
 
 	status.tps.roc = status.tps.tps - status.tps.last;
 
@@ -493,9 +493,9 @@ USHORT AEBPW;
 		AEBPW =
 	        interpolate_u16(status.rpm.rpm, config.AE.rpm.bins[status.idx.AE_rpm], config.AE.rpm.bins[status.idx.AE_rpm+1],
 	    		interpolate_u16(status.tps.last, config.AE.tps.bins[status.idx.AE_tps], config.AE.tps.bins[status.idx.AE_tps+1],
-			    	config.AE.BPW[status.idx.AE_tps][status.idx.AE_rpm], config.AE.BPW[status.idx.AE_tps+1][status.idx.AE_rpm]),
+			    	config.AE.BPW[status.idx.AE_rpm][status.idx.AE_tps], config.AE.BPW[status.idx.AE_rpm][status.idx.AE_tps+1]),
 			    		interpolate_u16(status.tps.last, config.AE.tps.bins[status.idx.AE_tps], config.AE.tps.bins[status.idx.AE_tps+1],
-			    			config.AE.BPW[status.idx.AE_tps][status.idx.AE_rpm+1], config.AE.BPW[status.idx.AE_tps+1][status.idx.AE_rpm+1]));
+			    			config.AE.BPW[status.idx.AE_rpm+1][status.idx.AE_tps], config.AE.BPW[status.idx.AE_rpm+1][status.idx.AE_tps+1]));
 
 		t = AE_ROC_BINS - 2;
 	    do
@@ -688,9 +688,9 @@ void ego_update()
     status.ego.target =
         interpolate_u16(status.rpm.rpm, config.rpm_bins[status.idx.rpm], config.rpm_bins[status.idx.rpm+1],
     		interpolate_u16(status.map.map, config.map_bins[status.idx.map], config.map_bins[status.idx.map+1],
-		    	config.ego.target[status.idx.map][status.idx.rpm], config.ego.target[status.idx.map+1][status.idx.rpm]),
+		    	config.ego.target[status.idx.rpm][status.idx.map], config.ego.target[status.idx.rpm][status.idx.map+1]),
 		    		interpolate_u16(status.map.map, config.tps.bins[status.idx.map], config.tps.bins[status.idx.map+1],
-		    			config.ego.target[status.idx.map][status.idx.rpm+1], config.ego.target[status.idx.map+1][status.idx.rpm+1]));
+		    			config.ego.target[status.idx.rpm+1][status.idx.map], config.ego.target[status.idx.rpm+1][status.idx.map+1]));
 
 
 
