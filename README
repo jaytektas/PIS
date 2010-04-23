@@ -36,6 +36,7 @@ This final value then has the temperature and EGO (once map mode is reached) cor
 
 Ignition timing follows this same scheme excluding EGO correction.
 
+BOOST
 Boost control is a somewhat crude on off solenoid switching that will oscillate around a set MAP pressure
 by a chosen hysteresis value. The good part is it's attached to your foot. A 16 x 10 table, RPM vs. TPS %
 determine at what MAP pressure the valve will open, closing again once this drops by the hysteresis.
