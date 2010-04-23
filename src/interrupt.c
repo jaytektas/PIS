@@ -180,7 +180,10 @@ static UBYTE state = 0;
 					length = sizeof(VERSION);
 					data = (UBYTE *) VERSION;
 					transmit();
-					return;
+					break;
+
+				case '@':		// thermal table calibration
+					state = 6;
 					break;
 
 				default:
@@ -270,6 +273,28 @@ static UBYTE state = 0;
 			length--;
 			data++;
 			if (!length) state = 0;
+			break;
+
+		// thermal sensor calibration
+		case 6:
+			switch(rx)
+			{
+				case 1:
+					data = (UBYTE *) &config.cts.kelvin;
+					length = 512;
+					state = 5;
+					break;
+
+				case 2:
+					data = (UBYTE *) &config.mat.kelvin;
+					length = 512;
+					state = 5;
+					break;
+
+				default:
+					state = 0;
+					break;
+			}
 			break;
 	}
 }

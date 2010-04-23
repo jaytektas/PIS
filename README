@@ -4,9 +4,8 @@ Regards
 Jay
 
 COMPILING
-PIS requires the GCC cross compiling tool chain for Motorola 68HC11 based cpu. The src/Makefile contains default paths for the toolset on my system and you may need to override their paths to match your system. This can be done easily on the command line. First enter the source directory before executing the make command. i.e.
+PIS requires the GCC cross compiling tool chain for Motorola 68HC11 based cpu. The Makefile contains default paths for the toolset on my system and you may need to override their paths to match your system. This can be done easily on the command line by executing the make command. i.e.
 
-cd src/
 make GCC=/usr/bin/m68hc11-gcc LD=/usr/bin/m68hc11-ld AS=/usr/bin/m68hc11-as OBJCOPY=/usr/bin/m68hc11-objcopy
 
 The usable image will be in Motorola s19 SREC format and is called "delco.s19"
