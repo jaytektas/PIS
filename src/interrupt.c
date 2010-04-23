@@ -170,13 +170,13 @@ static UBYTE state = 0;
 					state++;
 					break;
 
-				case 't':		// title
+				case 'S':		// signature for mtx
 					length = sizeof(TITLE);
 					data = (UBYTE *) TITLE;
 					transmit();
 					break;
 
-				case 'v':		// version
+				case 'Q':		// version for mtx
 					length = sizeof(VERSION);
 					data = (UBYTE *) VERSION;
 					transmit();
