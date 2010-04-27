@@ -293,14 +293,16 @@ static UBYTE state = 0;
 			switch(rx)
 			{
 				case 2:
-					data = (UBYTE *) &config.cts.kelvin;
+					data = (UBYTE *) config.cts.kelvin;
 					length = 512;
+					lobyte = 0;
 					state = 5;
 					break;
 
 				case 3:
-					data = (UBYTE *) &config.mat.kelvin;
+					data = (UBYTE *) config.mat.kelvin;
 					length = 512;
+					lobyte = 0;
 					state = 5;
 					break;
 
