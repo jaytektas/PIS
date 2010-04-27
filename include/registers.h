@@ -34,8 +34,8 @@ typedef struct tagIOCON
 {
 	unsigned SCIPS				:2;		// sci prescaler 8|16|32|64
 	unsigned SPIPS				:2;		// spi prescaler 2|4|16|32
-	unsigned				:2;
-	unsigned SI				:1;
+	unsigned					:2;
+	unsigned SI					:1;
 	unsigned SPIGODONE			:1;
 } IOCONBITS;
 extern volatile IOCONBITS IOCONbits;
@@ -69,13 +69,13 @@ extern unsigned char DDR;
 extern unsigned char PPORT;
 typedef struct tagPPORT
 {
-	unsigned 				:1;
-	unsigned MATCH_ENABLE			:1;
+	unsigned 					:1;
+	unsigned MATCH_ENABLE		:1;
 	unsigned SCI_BAUD			:2;
 	unsigned SXR_ENABLE			:1;
 	unsigned IAC_ENABLE			:1;
 	unsigned FAN_ENABLE			:1;
-	unsigned				:1;
+	unsigned					:1;
 } PPORTBITS;
 extern PPORTBITS PPORTbits;
 
@@ -101,8 +101,8 @@ typedef struct tagSCCR2
 	unsigned TCIE				:1;			// Transmit Complete Interrupt Enable
 	unsigned RIE				:1;			// Receive Interrupt Enable
 	unsigned ILIE				:1;			// Idle-Line Interrupt Enable
-	unsigned TE				:1;			// Transmit Enable
-	unsigned RE				:1;			// Recieve Enable
+	unsigned TE					:1;			// Transmit Enable
+	unsigned RE					:1;			// Recieve Enable
 	unsigned RWU				:1;			// Receiver Wakup
 	unsigned MATCHIE			:1;			// Send Break??
 } SCCR2BITS;
@@ -113,12 +113,12 @@ extern volatile UBYTE SCSR;
 typedef struct tagSCSR
 {
 	unsigned TDRE				:1;		// transmit data register empty
-	unsigned TC				:1;		// transmit complete
+	unsigned TC					:1;		// transmit complete
 	unsigned RDRF				:1;		// recieve data register full
 	unsigned IDLE				:1;		// Idle-Line Detect
-	unsigned OR				:1;		// Overrun Error
-	unsigned NF				:1;		// Noise Flag
-	unsigned FE				:1;		// Framing Error
+	unsigned OR					:1;		// Overrun Error
+	unsigned NF					:1;		// Noise Flag
+	unsigned FE					:1;		// Framing Error
 	unsigned MATCH				:1;		// Timer Match
 } SCSRBITS;
 
@@ -165,25 +165,25 @@ extern unsigned short ASYNC;
 extern volatile unsigned short FMDSR;
 typedef struct tagFMDSR
 {
-	unsigned				:1;
-	unsigned INJ_OCCURRED			:1;
-	unsigned				:1;
-	unsigned				:1;
+	unsigned					:1;
+	unsigned INJ_OCCURRED		:1;
+	unsigned					:1;
+	unsigned					:1;
 
-	unsigned 				:1;
-	unsigned				:1;
-	unsigned 				:1;
-	unsigned				:1;
+	unsigned 					:1;
+	unsigned					:1;
+	unsigned 					:1;
+	unsigned					:1;
 
-	unsigned				:1;
-	unsigned				:1;
-	unsigned				:1;
-	unsigned				:1;
+	unsigned					:1;
+	unsigned					:1;
+	unsigned					:1;
+	unsigned					:1;
 
-	unsigned				:1;
-	unsigned				:1;
-	unsigned				:1;
-	unsigned				:1;
+	unsigned					:1;
+	unsigned					:1;
+	unsigned					:1;
+	unsigned					:1;
 } FMDSRBITS;
 extern volatile FMDSRBITS FMDSRbits;
 
@@ -191,25 +191,25 @@ extern volatile FMDSRBITS FMDSRbits;
 extern volatile unsigned short FMDCR;
 typedef struct tagFMDCR
 {
-	unsigned 				:1;
-	unsigned				:1;
-	unsigned				:1;
-	unsigned				:1;
+	unsigned 					:1;
+	unsigned					:1;
+	unsigned					:1;
+	unsigned					:1;
 
-	unsigned SYNC_ENABLE			:1;
-	unsigned ASYNC_ENABLE			:1;
-	unsigned				:1;
-	unsigned				:1;
+	unsigned SYNC_ENABLE		:1;
+	unsigned ASYNC_ENABLE		:1;
+	unsigned					:1;
+	unsigned					:1;
 
-	unsigned				:1;
-	unsigned ASYNC_EXTENDS			:1;
-	unsigned DUAL_INJECT			:1;
-	unsigned				:1;
+	unsigned					:1;
+	unsigned ASYNC_EXTENDS		:1;
+	unsigned DUAL_INJECT		:1;
+	unsigned					:1;
 
 	unsigned CEL_CLEAR			:1;
-	unsigned 				:1;
-	unsigned				:1;
-	unsigned				:1;
+	unsigned 					:1;
+	unsigned					:1;
+	unsigned					:1;
 } FMDCRBITS;
 extern volatile FMDCRBITS FMDCRbits;
 
@@ -241,7 +241,7 @@ typedef struct tagDISCRETE
 	unsigned P8SRC				:1;		// Pin 8 source; 0 == pin 9 input, 1 == bit3
 	unsigned P8OUT				:1;		// Pin 8 output data when bit4 is set
 	unsigned EST_ENABLE			:1;
-	unsigned LIMP_WATCHDOG			:1;		// must be toggles every 12ms
+	unsigned LIMP_WATCHDOG		:1;		// must be toggles every 12ms
 	unsigned CTS_PULLUP			:1;		// 0 = 4k, 1 = 348 ohm
 } DISCRETEBITS;
 

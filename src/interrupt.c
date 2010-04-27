@@ -130,6 +130,7 @@ UBYTE *data;
 // checksum function removed for megatunix
 //UBYTE chksm = 0;
 USHORT wbuff;
+UBYTE lobyte;
 
 void recieve(void)
 {
@@ -217,12 +218,15 @@ static UBYTE state = 0;
 				case '!':
 					// we only accept word aligned addresses! this is to allow "live" updates
 					// byte wise data transfer would mean 1/2 written values!
-					if ((offset & 0x0001 == FALSE) && (length & 0x0001 == FALSE))
+					if (((offset & 0x0001) == 1) || ((length & 0x0001) == 1))
 					{
-					    data = (UBYTE *) offset;
-					    state++;
+						state = 0;
+						break;
 					}
-					else state = 0;
+
+					lobyte = FALSE;
+					data = (UBYTE *) offset;
+				    state++;
 					break;
 
 				case '?':
@@ -241,13 +245,16 @@ static UBYTE state = 0;
 				case 'w':
 					// we only accept word aligned addresses! this is to allow "live" updates
 					// byte wise data transfer would mean 1/2 written values!
-					if ((offset & 0x0001 == FALSE) && (length & 0x0001 == FALSE))
+					if (((offset & 0x0001) == 1) || ((length & 0x0001) == 1))
 					{
-					    data = (UBYTE *) &config;
-					    data += offset;
-					    state++;
+						state = 0;
+						break;
 					}
-					else state = 0;
+
+					lobyte = FALSE;
+					data = (UBYTE *) &config;
+					data += offset;
+					state++;
 					break;
 
 				case 'r':
@@ -265,14 +272,20 @@ static UBYTE state = 0;
 
 		// write data word wise
 		case 5:
-			if ((USHORT) data & 0x0001)
+			if (lobyte)
 			{
+				wbuff <<= 8;
 				wbuff += rx;
-				*((USHORT *)data) = wbuff;
-			} else wbuff = rx << 8;
-			length--;
-			data++;
-			if (!length) state = 0;
+				*data = wbuff;
+				data += 2;
+				lobyte = 0;
+			}
+			else
+			{
+				wbuff = rx;
+				lobyte = 1;
+			}
+			if (!(--length)) state = 0;
 			break;
 
 		// thermal sensor calibration
