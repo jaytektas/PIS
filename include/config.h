@@ -89,7 +89,7 @@ struct _config
 	struct
 	{
 		// ignition
-		SHORT ref_angle;									// reference angle relative to TDC degrees * 2.8444 -advance / +retard
+		SHORT ref_angle;									// reference angle relative to TDC degrees * 2.8444 +advance / -retard
 		struct
 		{
 			USHORT bypass;									// should we active EST bypass during cranking
