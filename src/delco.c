@@ -149,7 +149,7 @@ USHORT APW, AIAR;
 		// at least once
 		if (!status.flags.running)
 		{
-			if (status.rpm.rpm >=0) status.flags.cranking = TRUE;
+			if (status.rpm.rpm > 0) status.flags.cranking = TRUE;
 
 			// EST bypass
 			if (config.ign.crank.bypass) FMDCR &= 0xFFEF;
